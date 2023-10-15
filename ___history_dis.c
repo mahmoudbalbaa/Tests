@@ -8,14 +8,14 @@
  */
 int ___history_dis(__attribute__((unused))char **c, __attribute__((unused))int s)
 {
-	char *filename = ".simple_main._history";
+	char *file = "history";
 	FILE *fp;
 	char *line = NULL;
 	size_t len = 0;
 	int counter = 0;
 	char *er;
 
-	fp = fopen(filename, "r");
+	fp = fopen(file, "r");
 	if (fp == NULL)
 	{
 		return (-1);
