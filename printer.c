@@ -11,7 +11,7 @@ void print_number(unsigned int n)
 	if ((x / 10) > 0)
 		print_number(x / 10);
 
-	_putchar(x % 10 + '0');
+	_putchar_(x % 10 + '0');
 }
 /**
  * print_number_in -Print Number Putchar
@@ -24,11 +24,11 @@ void print_number_in(int n)
 
 	if (n < 0)
 	{
-		_putchar('-');
+		_putchar_('-');
 		x = -x;
 	}
 	if ((x / 10) > 0)
 		print_number(x / 10);
 
-	_putchar(x % 10 + '0');
+	_putchar_(x % 10 + '0');
 }

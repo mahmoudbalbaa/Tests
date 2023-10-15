@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * prompt - Display Shell Prompt
+ * print_prompt - Display Shell Prompt
  */
-void prompt(void)
+void print_prompt(void)
 {
 	PRINTER("$ ");
 }
@@ -20,7 +20,7 @@ void print_error(char *input, int counter, char **argv)
 
 	PRINTER(argv[0]);
 	PRINTER(": ");
-	er = _itoa(counter);
+	er = _itoa_(counter);
 	PRINTER(er);
 	free(er);
 	PRINTER(": ");

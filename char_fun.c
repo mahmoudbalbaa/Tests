@@ -1,25 +1,25 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
+ * _putchar_ - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c)
+int _putchar_(char c)
 {
 	return (write(1, &c, 1));
 }
 /**
- * _strncpy - copie a string
+ * _strncpy_ - copie a string
  * @dest:char
  *  @src:char
  * @n:int
  * Return:char
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_strncpy_(char *dest, char *src, int n)
 {
 int i;
 
@@ -38,12 +38,12 @@ i = 0;
 }
 
 /**
- * _strlen - lenght of string
+ * _strlen_ - lenght of string
  * @s:char
  * Return:int
  */
 
-int _strlen(char *s)
+int _strlen_(char *s)
 {
 	int i;
 
@@ -55,11 +55,11 @@ return (i);
 }
 
 /**
- * _atoi - convert to a int
+ * _atoi_ - convert to a int
  * @s:string
  * Return:int
  */
-int _atoi(char *s)
+int _atoi_(char *s)
 {
 int i, j, n, x;
 
@@ -80,18 +80,18 @@ int i, j, n, x;
 	return (n);
 }
 /**
- * _puts - print a string
+ * _puts_ - print a string
  * @str:pointer char
  * return:void
  */
-void _puts(char *str)
+void _puts_(char *str)
 {
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		_putchar_(str[i]);
 	}
-_putchar('\n');
+_putchar_('\n');
 return;
 }

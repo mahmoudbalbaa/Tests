@@ -23,7 +23,7 @@ int history_dis(__attribute__((unused))char **c, __attribute__((unused))int s)
 	while ((getline(&line, &len, fp)) != -1)
 	{
 		counter++;
-		er = _itoa(counter);
+		er = _itoa_(counter);
 		PRINTER(er);
 		free(er);
 		PRINTER(" ");

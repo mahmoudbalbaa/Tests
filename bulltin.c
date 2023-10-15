@@ -19,14 +19,14 @@ void  exit_bul(char **cmd, char *input, char **argv, int c)
 	}
 	while (cmd[1][i])
 	{
-		if (_isalpha(cmd[1][i++]) != 0)
+		if (_isalpha_(cmd[1][i++]) != 0)
 		{
 			_prerror(argv, c, cmd);
 			break;
 		}
 		else
 		{
-			statue = _atoi(cmd[1]);
+			statue = _atoi_(cmd[1]);
 			free(input);
 			free(cmd);
 			exit(statue);
@@ -48,7 +48,7 @@ int change_dir(char **cmd, __attribute__((unused))int er)
 
 	if (cmd[1] == NULL)
 		value = chdir(getenv("HOME"));
-	else if (_strcmp(cmd[1], "-") == 0)
+	else if (_strcmp_(cmd[1], "-") == 0)
 	{
 		value = chdir(getenv("OLDPWD"));
 	}
@@ -81,7 +81,7 @@ size_t i;
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
-		len = _strlen(environ[i]);
+		len = _strlen_(environ[i]);
 		write(1, environ[i], len);
 		write(STDOUT_FILENO, "\n", 1);
 	}
@@ -113,7 +113,7 @@ int display_help(char **cmd, __attribute__((unused))int er)
 			return (-1);
 		}
 	}
-	_putchar('\n');
+	_putchar_('\n');
 	return (0);
 }
 /**
@@ -127,20 +127,20 @@ int echo_bul(char **cmd, int st)
 	char *path;
 	unsigned int  pid = getppid();
 
-	if (_strncmp(cmd[1], "$?", 2) == 0)
+	if (_strncmp_(cmd[1], "$?", 2) == 0)
 	{
 		print_number_in(st);
 		PRINTER("\n");
 	}
-	else if (_strncmp(cmd[1], "$$", 2) == 0)
+	else if (_strncmp_(cmd[1], "$$", 2) == 0)
 	{
 		print_number(pid);
 		PRINTER("\n");
 
 	}
-	else if (_strncmp(cmd[1], "$PATH", 5) == 0)
+	else if (_strncmp_(cmd[1], "$PATH", 5) == 0)
 	{
-		path = _getenv("PATH");
+		path = _getenv_("PATH");
 		PRINTER(path);
 		PRINTER("\n");
 		free(path);

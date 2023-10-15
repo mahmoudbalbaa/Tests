@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
-* _getline - Read The Input By User From Stdin
+* _getline_ - Read The Input By User From Stdin
 * Return: Input
 */
-char *_getline()
+char *_getline_()
 {
 int i, buffsize = BUFSIZE, rd;
 char c = 0;
@@ -34,7 +34,7 @@ char *buff = malloc(buffsize);
 		}
 		if (i >= buffsize)
 		{
-			buff = _realloc(buff, buffsize, buffsize + 1);
+			buff = _realloc_(buff, buffsize, buffsize + 1);
 			if (buff == NULL)
 			{
 				return (NULL);

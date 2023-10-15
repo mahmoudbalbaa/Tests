@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * handle_builtin - Handle Builtin Command
+ * _builtin_handl - Handle Builtin Command
  * @cmd: Parsed Command
  * @er:statue of last Excute
  * Return: -1 Fail 0 Succes (Return :Excute Builtin)
  */
 
-int handle_builtin(char **cmd, int er)
+int _builtin_handl(char **cmd, int er)
 {
 	 bul_t bil[] = {
 		{"cd", change_dir},
@@ -21,7 +21,7 @@ int handle_builtin(char **cmd, int er)
 
 	while ((bil + i)->command)
 	{
-		if (_strcmp(cmd[0], (bil + i)->command) == 0)
+		if (_strcmp_(cmd[0], (bil + i)->command) == 0)
 		{
 			return ((bil + i)->fun(cmd, er));
 		}
@@ -30,7 +30,7 @@ int handle_builtin(char **cmd, int er)
 	return (-1);
 }
 /**
- * check_cmd - Excute Simple Shell Command (Fork,Wait,Excute)
+ * _cmd_check - Excute Simple Shell Command (Fork,Wait,Excute)
  *
  * @cmd:Parsed Command
  * @input: User Input
@@ -38,7 +38,7 @@ int handle_builtin(char **cmd, int er)
  * @argv:Program Name
  * Return: 1 Case Command Null -1 Wrong Command 0 Command Excuted
  */
-int check_cmd(char **cmd, char *input, int c, char **argv)
+int _cmd_check(char **cmd, char *input, int c, char **argv)
 {
 	int status;
 	pid_t pid;
@@ -57,9 +57,9 @@ int check_cmd(char **cmd, char *input, int c, char **argv)
 
 	if (pid == 0)
 	{
-		if (_strncmp(*cmd, "./", 2) != 0 && _strncmp(*cmd, "/", 1) != 0)
+		if (_strncmp_(*cmd, "./", 2) != 0 && _strncmp_(*cmd, "/", 1) != 0)
 		{
-			path_cmd(cmd);
+			_cmd_path(cmd);
 		}
 
 		if (execve(*cmd, cmd, environ) == -1)
@@ -75,11 +75,11 @@ int check_cmd(char **cmd, char *input, int c, char **argv)
 	return (0);
 }
 /**
- * signal_to_handel - Handle ^C
+ * sign_handle - Handle ^C
  * @sig:Captured Signal
  * Return: Void
  */
-void signal_to_handel(int sig)
+void sign_handle(int sig)
 {
 	if (sig == SIGINT)
 	{

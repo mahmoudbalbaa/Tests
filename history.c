@@ -26,11 +26,11 @@ int history(char *input)
 	return (1);
 }
 /**
- * free_env - Free Enviroment Variable Array
+ * _free_env_ - Free Enviroment Variable Array
  * @env:  Environment variables.
  * Return: Void
  */
-void free_env(char **env)
+void _free_env_(char **env)
 {
 	int i;
 

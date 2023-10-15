@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * parse_cmd - Parse Line Of Input
+ * _cmd_prase - Parse Line Of Input
  * @input:User Input To Parse
  * Return: Array Of Char (Parsed):Simple Shell
  */
-char **parse_cmd(char *input)
+char **_cmd_prase(char *input)
 {
 	char **tokens;
 	char *token;
@@ -20,11 +20,11 @@ char **parse_cmd(char *input)
 		return (NULL);
 	}
 
-	token = _strtok(input, "\n ");
+	token = _strtok_(input, "\n ");
 	for (i = 0; token; i++)
 	{
 		tokens[i] = token;
-		token = _strtok(NULL, "\n ");
+		token = _strtok_(NULL, "\n ");
 	}
 	tokens[i] = NULL;
 

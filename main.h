@@ -17,56 +17,56 @@ extern char **environ;
 
 #define BUFSIZE 1024
 #define DELIM " \t\r\n\a"
-#define PRINTER(c) (write(STDOUT_FILENO, c, _strlen(c)))
+#define PRINTER(c) (write(STDOUT_FILENO, c, _strlen_(c)))
 
 /**###### STRING FUNCTION ######*/
 
-char *_strtok(char *str, const char *tok);
-unsigned int check_delim(char c, const char *str);
-char *_strncpy(char *dest, char *src, int n);
-int _strlen(char *s);
-int _putchar(char c);
-int _atoi(char *s);
-void _puts(char *str);
-int _strcmp(char *s1, char *s2);
-int _isalpha(int c);
-void array_rev(char *arr, int len);
-int intlen(int num);
-char *_itoa(unsigned int n);
-char *_strcat(char *dest, char *src);
-char *_strcpy(char *dest, char *src);
-char *_strchr(char *s, char c);
-int _strncmp(const char *s1, const char *s2, size_t n);
-char *_strdup(char *str);
+char *_strtok_(char *str, const char *tok);
+unsigned int _checkdelim_(char c, const char *str);
+char *_strncpy_(char *dest, char *src, int n);
+int _strlen_(char *s);
+int _putchar_(char c);
+int _atoi_(char *s);
+void _puts_(char *str);
+int _strcmp_(char *s1, char *s2);
+int _isalpha_(int c);
+void _array_rev_(char *arr, int len);
+int _intlen_(int num);
+char *_itoa_(unsigned int n);
+char *_strcat_(char *dest, char *src);
+char *_strcpy_(char *dest, char *src);
+char *_strchr_(char *s, char c);
+int _strncmp_(const char *s1, const char *s2, size_t n);
+char *_strdup_(char *str);
 
 /**###### MEMORIE  MANGMENT ####*/
 
-void free_env(char **env);
-void *fill_an_array(void *a, int el, unsigned int len);
-char *_memcpy(char *dest, char *src, unsigned int n);
-void *_calloc(unsigned int size);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-void free_all(char **input, char *line);
+void _free_env_(char **env);
+void *array_fill(void *a, int el, unsigned int len);
+char *_memocpy_(char *dest, char *src, unsigned int n);
+void *_calloc_(unsigned int size);
+void *_realloc_(void *ptr, unsigned int old_size, unsigned int new_size);
+void _freeall_(char **input, char *line);
 
 /**###### INPUT Function ######*/
 
-void prompt(void);
-void signal_to_handel(int sig);
-char *_getline(void);
+void print_prompt(void);
+void sign_handle(int sig);
+char *_getline_(void);
 
 /** ###### Command parser and extractor ###*/
 
-int path_cmd(char **line);
-char *_getenv(char *name);
-char **parse_cmd(char *cmd);
-int handle_builtin(char **cmd, int er);
-void read_file(char *filename, char **argv);
-char *build(char *token, char *value);
-int check_builtin(char **cmd);
-void creat_envi(char **envi);
-int check_cmd(char **tokens, char *line, int count, char **argv);
-void treat_file(char *line, int counter, FILE *fd, char **argv);
-void exit_bul_for_file(char **cmd, char *line, FILE *fd);
+int _cmd_path(char **line);
+char *_getenv_(char *name);
+char **_cmd_prase(char *cmd);
+int _builtin_handl(char **cmd, int er);
+void _file_read(char *filename, char **argv);
+char *_build_(char *token, char *value);
+int _bultn_checker(char **cmd);
+void _make_env(char **envi);
+int _cmd_check(char **tokens, char *line, int count, char **argv);
+void _treat_file(char *line, int counter, FILE *fd, char **argv);
+void exit_file_bul(char **cmd, char *line, FILE *fd);
 
 /** ####BUL FUNC #####*/
 

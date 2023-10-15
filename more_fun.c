@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * _strcpy - Copie Source To Destination Char
+ * _strcpy_ - Copie Source To Destination Char
  * @dest:Destination
  * @src:Source
  * Return: Copie Of Char *
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy_(char *dest, char *src)
 {
 int i;
 
@@ -19,12 +19,12 @@ dest[i] = '\0';
 return (dest);
 }
 /**
- * _strcat - Concat Two String
+ * _strcat_ - Concat Two String
  * @dest:First String
  * @src:Second String
  * Return:First String + Second String Char *
  */
-char *_strcat(char *dest, char *src)
+char *_strcat_(char *dest, char *src)
 {
 	char *s = dest;
 
@@ -43,12 +43,12 @@ char *_strcat(char *dest, char *src)
 	return (s);
 }
 /**
- * _strchr - Locate Charactere In String
+ * _strchr_ - Locate Charactere In String
  * @s:String Search In
  * @c:Char To Search For
  * Return: Pointer To Char*
  */
-char *_strchr(char *s, char c)
+char *_strchr_(char *s, char c)
 {
 
 	do		{
@@ -62,14 +62,14 @@ char *_strchr(char *s, char c)
 return (s);
 }
 /**
- * _strncmp - Compare Amount (n) Of Characters Of Two Strings.
+ * _strncmp_ - Compare Amount (n) Of Characters Of Two Strings.
  * @s1: A String.
  * @s2: A String.
  * @n: Amount Of Characters To Compare.
  *
  * Return: 1 If The Strings Don't Match Otherwise 0
  */
-int _strncmp(const char *s1, const char *s2, size_t n)
+int _strncmp_(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
 
@@ -85,16 +85,16 @@ int _strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 /**
- * _strdup - Duplicate A String
+ * _strdup_ - Duplicate A String
  * @str:String
  * Return: Duplicate String Failed Null
  */
-char *_strdup(char *str)
+char *_strdup_(char *str)
 {
 	size_t len, i;
 	char *str2;
 
-	len = _strlen(str);
+	len = _strlen_(str);
 	str2 = malloc(sizeof(char) * (len + 1));
 	if (!str2)
 	{
