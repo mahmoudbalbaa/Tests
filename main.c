@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - Simple Shell (Hsh)
+ * main - Simple Shell
  * @argc: Argument Count
  * @argv:Argument Value
  * Return: Exit Value By Status
@@ -45,46 +45,4 @@ int main(__attribute__((unused)) int argc, char **argv)
 		_freeall_(cmd, input);
 	}
 	return (statue);
-}
-/**
- * _bultn_checker - check builtin
- *
- * @cmd:command to check
- * Return: 0 Succes -1 Fail
- */
-int _bultn_checker(char **cmd)
-{
-	bul_t fun[] = {
-		{"cd", NULL},
-		{"help", NULL},
-		{"echo", NULL},
-		{"_history", NULL},
-		{NULL, NULL}
-	};
-	int i = 0;
-		if (*cmd == NULL)
-	{
-		return (-1);
-	}
-
-	while ((fun + i)->command)
-	{
-		if (_strcmp_(cmd[0], (fun + i)->command) == 0)
-			return (0);
-		i++;
-	}
-	return (-1);
-}
-/**
- * _make_env - Creat Array of Enviroment Variable
- * @envi: Array of Enviroment Variable
- * Return: Void
- */
-void _make_env(char **envi)
-{
-	int i;
-
-	for (i = 0; environ[i]; i++)
-		envi[i] = _strdup_(environ[i]);
-	envi[i] = NULL;
 }
