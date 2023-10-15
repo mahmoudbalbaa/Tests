@@ -1,18 +1,6 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-/**###### environ var ######*/
-
-extern char **environ;
-
-/**##### MACROS ######*/
-
-#define BUFSIZE 1024
-#define DELIM " \t\r\n\a"
-#define PRINTER(c) (write(STDOUT_FILENO, c, _strlen(c)))
-
-/**###### LIBS USED ######*/
-
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -25,9 +13,11 @@ extern char **environ;
 #include <errno.h>
 #include <linux/limits.h>
 
+extern char **environ;
 
-
-
+#define BUFSIZE 1024
+#define DELIM " \t\r\n\a"
+#define PRINTER(c) (write(STDOUT_FILENO, c, _strlen(c)))
 
 /**###### STRING FUNCTION ######*/
 
@@ -95,7 +85,6 @@ void print_number(unsigned int n);
 void print_number_in(int n);
 void print_error(char *line, int c, char **argv);
 void _prerror(char **argv, int c, char **cmd);
-
 
 /**
  * struct bulltin - contain bultin to handle and function to excute
