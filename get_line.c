@@ -42,16 +42,16 @@ char *buff = malloc(buffsize);
 		}
 	}
 	buff[i] = '\0';
-	hashtag_handle(buff);
+	_hash_handl(buff);
 	return (buff);
 }
 
 /**
- * hashtag_handle - remove everything after #
+ * _hash_handl - remove everything after #
  * @buff: input;
  * Return:void
  */
-void hashtag_handle(char *buff)
+void _hash_handl(char *buff)
 {
 	int i;
 

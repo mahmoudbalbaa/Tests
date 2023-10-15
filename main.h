@@ -70,21 +70,21 @@ void exit_file_bul(char **cmd, char *line, FILE *fd);
 
 /** ####BUL FUNC #####*/
 
-void hashtag_handle(char *buff);
-int history(char *input);
-int history_dis(char **cmd, int er);
-int dis_env(char **cmd, int er);
-int change_dir(char **cmd, int er);
-int display_help(char **cmd, int er);
-int echo_bul(char **cmd, int er);
-void  exit_bul(char **cmd, char *input, char **argv, int c);
-int print_echo(char **cmd);
+void _hash_handl(char *buff);
+int _history(char *input);
+int ___history_dis(char **cmd, int er);
+int _env_dis(char **cmd, int er);
+int _cd(char **cmd, int er);
+int _help(char **cmd, int er);
+int _echo(char **cmd, int er);
+void  _bul_exit(char **cmd, char *input, char **argv, int c);
+int _echo_print(char **cmd);
 
 /** ####error handle and Printer ####*/
-void print_number(unsigned int n);
-void print_number_in(int n);
-void print_error(char *line, int c, char **argv);
-void _prerror(char **argv, int c, char **cmd);
+void _print_num(unsigned int n);
+void _print_num_in(int n);
+void _errorprint(char *line, int c, char **argv);
+void _perror_(char **argv, int c, char **cmd);
 
 /**
  * struct bulltin - contain bultin to handle and function to excute

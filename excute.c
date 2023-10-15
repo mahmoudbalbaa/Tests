@@ -10,11 +10,11 @@
 int _builtin_handl(char **cmd, int er)
 {
 	 bul_t bil[] = {
-		{"cd", change_dir},
-		{"env", dis_env},
-		{"help", display_help},
-		{"echo", echo_bul},
-		{"history", history_dis},
+		{"cd", _cd},
+		{"env", _env_dis},
+		{"help", _help},
+		{"echo", _echo},
+		{"_history", ___history_dis},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -64,7 +64,7 @@ int _cmd_check(char **cmd, char *input, int c, char **argv)
 
 		if (execve(*cmd, cmd, environ) == -1)
 		{
-			print_error(cmd[0], c, argv);
+			_errorprint(cmd[0], c, argv);
 			free(input);
 			free(cmd);
 			exit(EXIT_FAILURE);

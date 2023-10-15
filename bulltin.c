@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * exit_bul - Exit Statue Shell
+ * _bul_exit - Exit Statue Shell
  * @cmd: Parsed Command
  * @input: User Input
  * @argv:Program Name
  * @c:Excute Count
  * Return: Void (Exit Statue)
  */
-void  exit_bul(char **cmd, char *input, char **argv, int c)
+void  _bul_exit(char **cmd, char *input, char **argv, int c)
 {
 	int statue, i = 0;
 
@@ -21,7 +21,7 @@ void  exit_bul(char **cmd, char *input, char **argv, int c)
 	{
 		if (_isalpha_(cmd[1][i++]) != 0)
 		{
-			_prerror(argv, c, cmd);
+			_perror_(argv, c, cmd);
 			break;
 		}
 		else
@@ -36,12 +36,12 @@ void  exit_bul(char **cmd, char *input, char **argv, int c)
 
 
 /**
- * change_dir - Change Dirctorie
+ * _cd - Change Dirctorie
  * @cmd: Parsed Command
  * @er: Statue Last Command Excuted
  * Return: 0 Succes 1 Failed (For Old Pwd Always 0 Case No Old PWD)
  */
-int change_dir(char **cmd, __attribute__((unused))int er)
+int _cd(char **cmd, __attribute__((unused))int er)
 {
 	int value = -1;
 	char cwd[PATH_MAX];
@@ -69,12 +69,12 @@ int change_dir(char **cmd, __attribute__((unused))int er)
 	return (0);
 }
 /**
- * dis_env - Display Enviroment Variable
+ * _env_dis - Display Enviroment Variable
  * @cmd:Parsed Command
  * @er:Statue of Last command Excuted
  * Return:Always 0
  */
-int dis_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
+int _env_dis(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
 {
 size_t i;
 	int len;
@@ -88,12 +88,12 @@ size_t i;
 	return (0);
 }
 /**
- * display_help - Displaying Help For Builtin
+ * _help - Displaying Help For Builtin
  * @cmd:Parsed Command
  * @er: Statue Of Last Command Excuted
  * Return: 0 Succes -1 Fail
  */
-int display_help(char **cmd, __attribute__((unused))int er)
+int _help(char **cmd, __attribute__((unused))int er)
 {
 	int fd, fw, rd = 1;
 	char c;
@@ -117,24 +117,24 @@ int display_help(char **cmd, __attribute__((unused))int er)
 	return (0);
 }
 /**
- * echo_bul - Excute Echo Cases
+ * _echo - Excute Echo Cases
  * @st:Statue Of Last Command Excuted
  * @cmd: Parsed Command
  * Return: Always 0 Or Excute Normal Echo
  */
-int echo_bul(char **cmd, int st)
+int _echo(char **cmd, int st)
 {
 	char *path;
 	unsigned int  pid = getppid();
 
 	if (_strncmp_(cmd[1], "$?", 2) == 0)
 	{
-		print_number_in(st);
+		_print_num_in(st);
 		PRINTER("\n");
 	}
 	else if (_strncmp_(cmd[1], "$$", 2) == 0)
 	{
-		print_number(pid);
+		_print_num(pid);
 		PRINTER("\n");
 
 	}
@@ -147,7 +147,7 @@ int echo_bul(char **cmd, int st)
 
 	}
 	else
-		return (print_echo(cmd));
+		return (_echo_print(cmd));
 
 	return (1);
 }

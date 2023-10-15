@@ -25,11 +25,11 @@ int main(__attribute__((unused)) int argc, char **argv)
 		{
 			continue;
 		}
-		history(input);
+		_history(input);
 		cmd = _cmd_prase(input);
 		if (_strcmp_(cmd[0], "exit") == 0)
 		{
-			exit_bul(cmd, input, argv, counter);
+			_bul_exit(cmd, input, argv, counter);
 		}
 		else if (_bultn_checker(cmd) == 0)
 		{
@@ -58,7 +58,7 @@ int _bultn_checker(char **cmd)
 		{"cd", NULL},
 		{"help", NULL},
 		{"echo", NULL},
-		{"history", NULL},
+		{"_history", NULL},
 		{NULL, NULL}
 	};
 	int i = 0;

@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * history - Fill File By User Input
+ * _history - Fill File By User Input
  * @input: User Input
  * Return: -1 Fail 0 Succes
  */
-int history(char *input)
+int _history(char *input)
 {
-	char *filename = ".simple_main.history";
+	char *filename = ".simple_main._history";
 	ssize_t fd, w;
 	int len = 0;
 

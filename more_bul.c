@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * history_dis - Display History Of User Input Simple Shell
+ * ___history_dis - Display History Of User Input Simple Shell
  * @c:Parsed Command
  * @s:Statue Of Last Excute
  * Return: 0 Succes -1 Fail
  */
-int history_dis(__attribute__((unused))char **c, __attribute__((unused))int s)
+int ___history_dis(__attribute__((unused))char **c, __attribute__((unused))int s)
 {
-	char *filename = ".simple_main.history";
+	char *filename = ".simple_main._history";
 	FILE *fp;
 	char *line = NULL;
 	size_t len = 0;
@@ -36,11 +36,11 @@ int history_dis(__attribute__((unused))char **c, __attribute__((unused))int s)
 	return (0);
 }
 /**
- * print_echo - Excute Normal Echo
+ * _echo_print - Excute Normal Echo
  * @cmd: Parsed Command
  * Return: 0 Succes -1 Fail
  */
-int print_echo(char **cmd)
+int _echo_print(char **cmd)
 {
 	pid_t pid;
 	int status;

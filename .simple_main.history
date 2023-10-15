@@ -17,3 +17,5 @@ env
 ls
 lkag
 exit
+cd
+echo 'hi'
