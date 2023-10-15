@@ -7,7 +7,7 @@
  * Return:Always 0
  */
 
-int _env_dis(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
+int _env_dis(__attribute__((unused))char **cmd, __attribute__((unused))int er)
 {
 	size_t i;
 	int len;
