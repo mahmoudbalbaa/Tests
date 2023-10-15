@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * history - Fill File By User Input
  * @input: User Input
@@ -6,7 +6,7 @@
  */
 int history(char *input)
 {
-	char *filename = ".simple_shell_history";
+	char *filename = ".simple_main.history";
 	ssize_t fd, w;
 	int len = 0;
 

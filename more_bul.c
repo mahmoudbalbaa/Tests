@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * history_dis - Display History Of User Input Simple Shell
@@ -8,7 +8,7 @@
  */
 int history_dis(__attribute__((unused))char **c, __attribute__((unused))int s)
 {
-	char *filename = ".simple_shell_history";
+	char *filename = ".simple_main.history";
 	FILE *fp;
 	char *line = NULL;
 	size_t len = 0;
