@@ -8,14 +8,14 @@
 
 int _history(char *input)
 {
-	char *filename = ".simple_main._history";
+	char *file = "history";
 	ssize_t fd, w;
 	int len = 0;
 
-	if (!filename)
+	if (!file)
 		return (-1);
 
-	fd = open(filename, O_CREAT | O_RDWR | O_APPEND, 00600);
+	fd = open(file, O_CREAT | O_RDWR | O_APPEND, 00600);
 	if (fd < 0)
 		return (-1);
 
