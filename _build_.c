@@ -11,16 +11,16 @@
 char *_build_(char *token, char *value)
 {
 	char *cmd;
-	size_t len;
+	size_t ln;
 
-	len = _strlen_(value) + _strlen_(token) + 2;
-	cmd = malloc(sizeof(char) * len);
+	ln = _strlen_(value) + _strlen_(token) + 2;
+	cmd = malloc(sizeof(char) * ln);
 	if (cmd == NULL)
 	{
 		return (NULL);
 	}
 
-	memset(cmd, 0, len);
+	memset(cmd, 0, ln);
 
 	cmd = _strcat_(cmd, value);
 	cmd = _strcat_(cmd, "/");
