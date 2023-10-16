@@ -9,7 +9,7 @@
  */
 void  _bul_exit(char **cmd, char *input, char **argv, int c)
 {
-	int statue, i = 0;
+	int st, i = 0;
 
 	if (cmd[1] == NULL)
 	{
@@ -26,10 +26,10 @@ void  _bul_exit(char **cmd, char *input, char **argv, int c)
 		}
 		else
 		{
-			statue = _atoi_(cmd[1]);
+			st = _atoi_(cmd[1]);
 			free(input);
 			free(cmd);
-			exit(statue);
+			exit(st);
 		}
 	}
 }
