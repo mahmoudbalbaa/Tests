@@ -9,22 +9,22 @@
 
 int _cd(char **cmd, __attribute__((unused))int er)
 {
-	int value = -1;
+	int v = -1;
 	char cwd[PATH_MAX];
 
 	if (cmd[1] == NULL)
-		value = chdir(getenv("HOME"));
+		v = chdir(getenv("HOME"));
 	else if (_strcmp_(cmd[1], "-") == 0)
-		value = chdir(getenv("OLDPWD"));
+		v = chdir(getenv("OLDPWD"));
 	else
-		value = chdir(cmd[1]);
+		v = chdir(cmd[1]);
 
-	if (value == -1)
+	if (v == -1)
 	{
 		perror("hsh");
 		return (-1);
 	}
-	else if (value != -1)
+	else if (v != -1)
 	{
 		getcwd(cwd, sizeof(cwd));
 		setenv("OLDPWD", getenv("PWD"), 1);
