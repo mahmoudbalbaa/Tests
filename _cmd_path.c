@@ -8,22 +8,22 @@
 
 int _cmd_path(char **cmd)
 {
-	char *path, *value, *cmd_path;
+	char *path, *value, *c_path;
 	struct stat buf;
 
 	path = _getenv_("PATH");
 	value = _strtok_(path, ":");
 	while (value != NULL)
 	{
-		cmd_path = _build_(*cmd, value);
-		if (stat(cmd_path, &buf) == 0)
+		c_path = _build_(*cmd, value);
+		if (stat(c_path, &buf) == 0)
 		{
-			*cmd = _strdup_(cmd_path);
-			free(cmd_path);
+			*cmd = _strdup_(c_path);
+			free(c_path);
 			free(path);
 			return (0);
 		}
-		free(cmd_path);
+		free(c_path);
 		value = _strtok_(NULL, ":");
 	}
 	free(path);
