@@ -9,7 +9,7 @@
 
 int _bultn_checker(char **cmd)
 {
-	bul_t fun[] = {
+	bul_t func[] = {
 		{"cd", NULL},
 		{"help", NULL},
 		{"echo", NULL},
@@ -21,9 +21,9 @@ int _bultn_checker(char **cmd)
 	if (*cmd == NULL)
 		return (-1);
 
-	while ((fun + i)->command)
+	while ((func + i)->command)
 	{
-		if (_strcmp_(cmd[0], (fun + i)->command) == 0)
+		if (_strcmp_(cmd[0], (func + i)->command) == 0)
 			return (0);
 		i++;
 	}
