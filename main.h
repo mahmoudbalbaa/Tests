@@ -72,7 +72,7 @@ void exit_file_bul(char **cmd, char *line, FILE *fd);
 
 void _hash_handl(char *buff);
 int _history(char *input);
-int ___history_dis(char **cmd, int er);
+int ___his_dis(char **cmd, int er);
 int _env_dis(char **cmd, int er);
 int _cd(char **cmd, int er);
 int _help(char **cmd, int er);
