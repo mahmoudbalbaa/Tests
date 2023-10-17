@@ -14,7 +14,7 @@ int _builtin_handl(char **cmd, int er)
 		{"env", _env_dis},
 		{"help", _help},
 		{"echo", _echo},
-		{"_history", ___history_dis},
+		{"_history", ___his_dis},
 		{NULL, NULL}
 	};
 	int i = 0;
